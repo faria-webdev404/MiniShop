@@ -3,6 +3,7 @@ import React from "react";
 import { FiSearch, FiUserPlus } from "react-icons/fi";
 import { TiShoppingCart } from "react-icons/ti";
 import { BsBagFill } from "react-icons/bs"; // Shopping bag icon
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -17,13 +18,53 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex space-x-12 text-lg text-gray-600 font-medium ml-10">
-            <span className="cursor-pointer hover:text-orange-600 transition">Home</span>
-            <span className="cursor-pointer hover:text-orange-600 transition">Products</span>
-            <span className="cursor-pointer hover:text-orange-600 transition">Cart</span>
-            <span className="cursor-pointer hover:text-orange-600 transition">Deals</span>
-            <span className="cursor-pointer hover:text-orange-600 transition">Contact</span>
-          </div>
+         <div className="hidden md:flex space-x-12 text-lg text-gray-600 font-medium ml-10">
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive ? "text-orange-600 font-semibold" : "hover:text-orange-600 transition"
+    }
+  >
+    Home
+  </NavLink>
+
+  <NavLink
+    to="/products"
+    className={({ isActive }) =>
+      isActive ? "text-orange-600 font-semibold" : "hover:text-orange-600 transition"
+    }
+  >
+    Products
+  </NavLink>
+
+  <NavLink
+    to="/cart"
+    className={({ isActive }) =>
+      isActive ? "text-orange-600 font-semibold" : "hover:text-orange-600 transition"
+    }
+  >
+    Cart
+  </NavLink>
+
+  <NavLink
+    to="/deals"
+    className={({ isActive }) =>
+      isActive ? "text-orange-600 font-semibold" : "hover:text-orange-600 transition"
+    }
+  >
+    Deals
+  </NavLink>
+
+  <NavLink
+    to="/contact"
+    className={({ isActive }) =>
+      isActive ? "text-orange-600 font-semibold" : "hover:text-orange-600 transition"
+    }
+  >
+    Contact
+  </NavLink>
+</div>
+
 
           {/* Search & Icons */}
           <div className="flex items-center space-x-6 relative ml-6">
@@ -45,7 +86,13 @@ const Navbar = () => {
             </div>
 
             {/* Login Icon */}
-            <FiUserPlus className="text-gray-700 hover:text-orange-600 cursor-pointer ml-2" size={28} />
+           <NavLink to="/login">
+  <FiUserPlus
+    className="text-gray-700 hover:text-orange-600 cursor-pointer ml-2"
+    size={28}
+  />
+</NavLink>
+
           </div>
         </div>
       </nav>

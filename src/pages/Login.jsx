@@ -1,8 +1,10 @@
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc'; // Google icon
 import { FaGithub } from 'react-icons/fa'; // GitHub icon
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+   const navigate = useNavigate();
+
   return (
     <>
       <section
@@ -16,7 +18,7 @@ const Login = () => {
         </style>
 
         <div className="max-w-xl w-full bg-white p-10 rounded-3xl shadow-xl border border-gray-200">
-          <h2 className="text-3xl font-extrabold text-center text-orange-600 mb-10 tracking-wide">
+          <h2 className="text-3xl font-semibold text-center text-orange-600 mb-10 tracking-wide">
             Login
           </h2>
 
