@@ -11,7 +11,7 @@ const NewsletterSignup = () => {
 
       <section
         style={{ fontFamily: "'Poppins', sans-serif" }}
-        className="bg-orange-50 rounded-3xl py-20 px-8 my-12 w-full max-w-full mx-auto shadow-lg text-center"
+        className="bg-gray-50 rounded-3xl py-20 px-8  w-full max-w-full mx-auto shadow-lg text-center"
       >
         <h2 className="text-3xl font-semibold text-orange-700 mb-4 tracking-wide">
           Stay Updated!

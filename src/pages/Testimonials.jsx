@@ -48,7 +48,7 @@ const Testimonials = () => {
   const currentTestimonials = testimonials.slice(startIndex, startIndex + 3);
 
   return (
-    <section className="py-20 h-[500px] px-6 text-center bg-orange-50 font-heading">
+    <section className="py-24 h-[500px] px-8 text-center bg-orange-50 font-heading">
       <h2 className="text-4xl font-bold mb-10 text-orange-700">What Our Customers Say</h2>
       <div className="flex justify-center items-center gap-6 relative max-w-7xl mx-auto">
 
