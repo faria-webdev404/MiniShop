@@ -1,17 +1,15 @@
 import React from "react";
+import brand1 from "../assets/images/amazon.png";
+import brand2 from "../assets/images/ebay.png";
+import brand3 from "../assets/images/walmart.png";
+import brand4 from "../assets/images/daraz.png";
 
-const brands = [
-  "https://upload.wikimedia.org/wikipedia/commons/2/29/Shopify_logo_2018.svg", // Shopify
-  "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", // Amazon
-  "https://upload.wikimedia.org/wikipedia/commons/1/1b/Ebay_logo.svg", // eBay
-  "https://upload.wikimedia.org/wikipedia/commons/4/48/Walmart_logo.svg", // Walmart
-  "https://upload.wikimedia.org/wikipedia/commons/0/0b/Alibaba_Group_logo.svg", // Alibaba
-];
+const brands = [brand1, brand2, brand3, brand4];
 
 const BrandLogos = () => {
   return (
     <section
-      className="w-full py-24 bg-gradient-to-r from-gray-50 via-white to-gray-100" // lighter orange background, increased height
+      className="w-full py-24 mt-6 bg-gradient-to-r from-gray-100 via-white to-gray-100"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <h2 className="text-5xl font-extrabold text-[#FF7A00] mb-16 text-center drop-shadow-md">
