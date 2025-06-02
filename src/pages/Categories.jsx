@@ -1,6 +1,6 @@
 import React from 'react';
 
-const categories = ["all", "electronics", "clothing", "books", "furniture"];
+const categories = ["all", "electronics", "clothing", "furniture","fashion"];
 
 const Categories = ({ selectedCategory, onSelectCategory }) => {
   return (

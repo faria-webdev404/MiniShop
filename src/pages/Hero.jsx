@@ -30,7 +30,7 @@ const Hero = () => {
               Discover the latest trends, unbeatable deals, and top brands all in one place. Fashion, electronics, home essentials — everything you need!
             </p>
             <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full font-semibold shadow-md transition transform hover:scale-105 duration-300 font-heading">
-              Start Shopping
+             Shop Now
             </button>
           </div>
 

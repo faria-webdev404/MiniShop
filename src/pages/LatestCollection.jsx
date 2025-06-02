@@ -19,7 +19,7 @@ const LatestCollection = () => {
             className="w-72 bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer"
           >
             <img
-              src={`https://via.placeholder.com/288x192?text=New+${item}`}
+              src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP7YW4QA4Oxw9HVOO9WxghCI0GuhnVdhkLqA&s+${item}`}
               alt={`New ${item}`}
               className="w-full h-48 object-cover rounded-md mb-4"
             />
