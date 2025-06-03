@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Categories from "./Categories";
 
-
-const Products = () => {
+const Products = ({ limit }) => {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [loading, setLoading] = useState(true);
 
-  // Your own dummy data
   const dummyProducts = [
     {
       id: 101,
@@ -40,26 +39,67 @@ const Products = () => {
       image:
         "https://onedegree.com.pk/cdn/shop/files/39_6fb6be73-ff30-4df7-868e-00bb9b0d7771.jpg?v=1706092698&width=1206",
     },
+    {
+      id: 105,
+      title: "Cosmo Sofa",
+      price: 99.99,
+      category: "furniture",
+      image:
+        "https://denovofurniture.pk/wp-content/uploads/2024/06/Opulence-New-5.jpg",
+    },
+    {
+      id: 106,
+      title: "Jacket Fall Winter",
+      price: 99.99,
+      category: "clothing",
+      image:
+        "https://m.media-amazon.com/images/I/61HknRN0TcL._AC_SL1500_.jpg",
+    },
+    {
+      id: 107,
+      title: "T-shirt",
+      price: 99.99,
+      category: "clothing",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3JySzx0pdzRnn6rV0dkwapAJIsSeNFYouLQ&s",
+    },
+    {
+      id: 108,
+      title: " Sofa",
+      price: 99.99,
+      category: "furniture",
+      image:
+        "https://multiwood.com.pk/cdn/shop/products/felix-chesterfield-velvet-sofa-bed_29S305FRSP_COL_BLACK.webp?v=1673252148",
+    },
+    {
+      id: 109,
+      title: "Black Shoes",
+      price: 99.99,
+      category: "fashion",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUqa8j9Nnja10qKeemNFI2Ua_Mv1drF3Ll3Q&s",
+    },
   ];
 
   useEffect(() => {
+    setLoading(true);
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
-        // Choose the product IDs you want to keep here:
         const selectedIds = [11, 13, 7, 10, 12, 14, 17];
-
         const filteredData = data.filter((product) =>
           selectedIds.includes(product.id)
         );
-
-        // Combine fake store data and your dummy products
-        const combinedProducts = [...filteredData,...dummyProducts];
-
+        const combinedProducts = [...filteredData, ...dummyProducts];
         setProducts(combinedProducts);
-      });
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
+  // Filter by category
   const filteredProducts =
     selectedCategory === "all"
       ? products
@@ -67,6 +107,33 @@ const Products = () => {
           (product) =>
             product.category.toLowerCase() === selectedCategory.toLowerCase()
         );
+
+  // Apply limit if passed and data is loaded
+  const displayedProducts =
+    !loading && limit ? filteredProducts.slice(0, limit) : filteredProducts;
+
+  if (loading) {
+    return (
+      <section className="px-4 py-10 md:px-20 bg-gray-50 flex justify-center items-center min-h-[200px]">
+        <div className="spinner"></div>
+
+        <style>{`
+          .spinner {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #ed8936; /* Orange */
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 1s linear infinite;
+          }
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
+      </section>
+    );
+  }
 
   return (
     <section className="px-4 py-10 md:px-20 bg-gray-50">
@@ -144,26 +211,29 @@ const Products = () => {
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
-        {filteredProducts.map((product) => (
-          <div key={product.id} className="product-card">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="product-image"
-            />
-            <h3 className="product-title font-heading">{product.title}</h3>
-
-            <div className="price-button-row">
-              <p className="product-price">${product.price}</p>
-              <button
-                className="btn-primary"
-                onClick={() => alert(`Added ${product.title} to cart!`)}
-              >
-                Add to Cart
-              </button>
+        {displayedProducts.length === 0 ? (
+          <p>No products found for this category.</p>
+        ) : (
+          displayedProducts.map((product) => (
+            <div key={product.id} className="product-card">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="product-image"
+              />
+              <h3 className="product-title font-heading">{product.title}</h3>
+              <div className="price-button-row">
+                <p className="product-price">${product.price}</p>
+                <button
+                  className="btn-primary"
+                  onClick={() => alert(`Added ${product.title} to cart!`)}
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </section>
   );

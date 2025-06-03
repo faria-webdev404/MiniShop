@@ -67,12 +67,15 @@ const Navbar = () => {
             </div>
 
             {/* Cart */}
-            <div className="relative ml-3">
-              <TiShoppingCart className="text-gray-700 hover:text-orange-600 cursor-pointer" size={30} />
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                2
-              </span>
-            </div>
+           <NavLink to="/cart" className="relative ml-3">
+  <TiShoppingCart
+    className="text-gray-700 hover:text-orange-600 cursor-pointer"
+    size={30}
+  />
+  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+    2
+  </span>
+</NavLink>
 
             {/* Authentication */}
             {!user ? (

@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
      <Hero />
-     <Products />
+     <Products limit={8} />
     <DiscountBanner />
      <LatestCollection />
      <DealsSection />

@@ -1,5 +1,5 @@
-// src/components/Hero.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import '../App.css';
 import pic from '../assets/images/watch.png';
 
@@ -29,9 +29,12 @@ const Hero = () => {
             <p className="text-gray-600 text-lg md:text-xl mb-6 max-w-md mx-auto lg:mx-0 font-body">
               Discover the latest trends, unbeatable deals, and top brands all in one place. Fashion, electronics, home essentials — everything you need!
             </p>
-            <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full font-semibold shadow-md transition transform hover:scale-105 duration-300 font-heading">
-             Shop Now
-            </button>
+            <Link
+              to="/products"
+              className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full font-semibold shadow-md transition transform hover:scale-105 duration-300 font-heading inline-block"
+            >
+              Shop Now
+            </Link>
           </div>
 
           {/* Image Section */}
