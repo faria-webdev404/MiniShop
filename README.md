@@ -30,7 +30,7 @@ A modern and responsive **E-commerce web app** built using **React.js**, featuri
 ```bash
 git clone https://github.com/your-username/ecommerce-auth-app.git
 cd ecommerce-auth-app 
-```bash
+```
 
 
 ## 📸 Screenshot
