@@ -28,7 +28,7 @@ A modern and responsive **E-commerce web app** built using **React.js**, featuri
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/ecommerce-auth-app.git
+git clone https://github.com/faria-webdev404/MiniShop.git
 cd ecommerce-auth-app 
 ```
 
