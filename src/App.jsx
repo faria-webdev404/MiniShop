@@ -1,14 +1,16 @@
 // src/App.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { AuthProvider, useAuth } from "./context/AuthContext"; // Import AuthContext
+import { AuthProvider, useAuth } from "./context/AuthContext";  // Import CartContext
 import Navbar from "./components/Navbar"; // Your Navbar
 import Home from "./pages/Home"; // Your Home page
 import Products from "./pages/Products"; // Your Products page
 import Cart from "./pages/Cart"; // Your Cart page
 import Login from "./pages/Login"; // Your Login page
 import Contact from "./pages/Contact"; // 
-import ProtectedRoute from "./components/ProtectedRoute"; // Protected route wrapper
+import ProtectedRoute from "./components/ProtectedRoute"; 
+import Footer from  './components/Footer';    
+import DealsSection from "./pages/DealsSection";
 
 const App = () => {
   return (
@@ -19,19 +21,24 @@ const App = () => {
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+            
             <Route path="/products" element={<Products />} />
-           
+             <Route
+            path="/cart"
+            element={<Cart />} />
+            <Route path ='/deals' element ={<DealsSection />} />
+           <Route
+            path="/contact"
+            element={<Contact />} />
           {/* Protected Routes - Only accessible when logged in */}
          <Route
             path="/cart"
-            element={<ProtectedRoute component={<Cart />} />}
-          />
-          <Route
-            path="/contact"
-            element={<ProtectedRoute component={<Contact />} />}
-          />
+            element={<Cart />} />
+          
+          
+          
         </Routes>
-
+        <Footer />
     </AuthProvider>
   );
 };

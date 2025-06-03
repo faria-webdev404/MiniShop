@@ -6,7 +6,7 @@ const dealsData = [
     title: "50% Off on Summer Collection",
     description: "Get ready for summer with half-price styles.",
     image:
-      "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80",
+      "https://www.shutterstock.com/image-vector/summer-collection-promotional-banner-summertime-260nw-1445935322.jpg",
     dealEnds: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
     originalPrice: 100,
     discountPercent: 50,
@@ -16,7 +16,7 @@ const dealsData = [
     title: "Buy 1 Get 1 Free - Shoes",
     description: "Step out in style with our exclusive BOGO deal.",
     image:
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWTx9oygOT1wA8khCT_-tdHju_LwbNvQjSbQ&s0",
     dealEnds: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
     originalPrice: 80,
     discountPercent: 50,
@@ -26,7 +26,7 @@ const dealsData = [
     title: "25% Off on Electronics",
     description: "Upgrade your gadgets with great discounts.",
     image:
-      "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+      "https://i.pinimg.com/564x/7b/3f/e1/7b3fe1e66e263b7e0c0e1f1cfb4086c7.jpg",
     dealEnds: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
     originalPrice: 200,
     discountPercent: 25,

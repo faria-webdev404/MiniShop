@@ -4,18 +4,20 @@ const Cart = () => {
   // Dummy cart items
   const cartItems = [
     {
-      id: 1,
-      title: 'Smartphone',
-      price: 299,
-      quantity: 1,
-      thumbnail: 'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
+      id: 101,
+      title: "Stylish Handbag",
+      price: 49.99,
+     quantity: 1,
+      image:
+        "https://sastabazzar.com/wp-content/uploads/2024/02/luxury-ladies-handbag-bags-in-pakistan-3.webp",
     },
-    {
-      id: 2,
-      title: 'Headphones',
-      price: 99,
+     {
+      id: 103,
+      title: "Bluetooth headphones",
+      price: 99.99,
       quantity: 2,
-      thumbnail: 'https://i.dummyjson.com/data/products/10/thumbnail.jpg',
+      image:
+        "https://www.ratdin.pk/cdn/shop/products/airpods-max-wireless-over-ear-headphones-active-noise-cancelling-transparency-mode-bluetooth-headphones-master-copy-872438.jpg?v=1708342011",
     },
   ];
 
@@ -30,8 +32,8 @@ const Cart = () => {
           }
         `}</style>
 
-        <h2 className="text-4xl font-heading font-bold mb-10 text-gray-900 border-b pb-4">
-          Your Cart
+        <h2 className="text-4xl font-heading font-semibold mb-10 text-gray-900 border-b pb-4">
+          Your  <span className='text-orange-600'>Cart</span>
         </h2>
 
         {cartItems.length === 0 ? (
@@ -45,10 +47,11 @@ const Cart = () => {
                   className="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-12 border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                   <img
-                    src={item.thumbnail}
-                    alt={item.title}
-                    className="w-full max-w-[150px] sm:w-32 h-32 object-cover rounded-md"
-                  />
+  src={item.image}  // <-- use 'image' instead of 'thumbnail'
+  alt={item.title}
+  className="w-full max-w-[150px] sm:w-32 h-32 object-cover rounded-md"
+/>
+
                   <div className="flex-grow text-center sm:text-left">
                     <h3 className="text-2xl font-semibold text-gray-900 font-heading">{item.title}</h3>
                     <p className="text-sm text-gray-600 mt-2">Quantity: {item.quantity}</p>
